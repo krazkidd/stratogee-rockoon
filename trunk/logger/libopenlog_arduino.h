@@ -1,12 +1,32 @@
+/*******************************************************************
+
+logger - Arduino GPS, acceleration, and temperature logging program
+Copyright (C) 2010  Mark Ross and Steven Fan
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+********************************************************************/
+
 /*
  * File: libopenlog_arduino.h
  * Author: Mark R.
  * Date: 02.09.2010
  * Description: This library is used to communicate with SparkFun's
  * OpenLog. By default, it logs every byte that comes through the serial
- * line onto a Fat16 microSD card at 9600 BPS, 8n1 to a file. I'm not sure if
- * it creates a new file on every power up, though. See http://wiki.github.com/nseidle/OpenLog/
- * for more information.
+ * line onto a Fat16 microSD card at 9600 BPS, 8n1 to a file (which can be
+ * changed in a config file on the OpenLog). For more information, see
+ * http://wiki.github.com/nseidle/OpenLog/
  * 
  * It is possible to put the OpenLog into command mode in order to 
  * configure it and review the status of the microSD card. Initially,
