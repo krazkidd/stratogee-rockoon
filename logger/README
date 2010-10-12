@@ -18,28 +18,16 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 ********************************************************************/
 
-/*
- * File: debug_stuff.h
- * Author: Mark R.
- * Date: 11.08.2010
- * Description: Print debug messages to the serial port.
- */ 
- 
-#ifndef DEBUG_STUFF_H
-#define DEBUG_STUFF_H
+The easiest way to develop and compile this code is through the Arduino
+IDE which you can get somewhere at arduino.cc. Note that you must also
+download and install the Messenger and OneWire libraries.
 
-#include "WProgram.h" // for Serial support
+In order to pull in a full NMEA sentence from the GPS, your Messenger
+library needs a small modification to it's internal buffer size. By
+default, it is 64 bytes large, but NMEA sentences can be a maximum of
+82 (80 + <CR><LF>). During our development, we just set it to 90. If you
+wish to make it smaller, you should also change GPS_MAX_SENTENCE_LENGTH
+in libgps_arduino.h.
 
-#ifdef DEBUG
-  #define DEBUG_PRINT(...) Serial.print(__VA_ARGS__);
-  #define DEBUG_PRINT_LN(...) Serial.println(__VA_ARGS__);
-  int xzxzxz; // counter used for DEBUG_PRINT_ERROR
-  #define DEBUG_PRINT_ERROR(...) for (xzxzxz = 0; xzxzxz < 25; xzxzxz++) { Serial.print("ERROR: "); Serial.println(__VA_ARGS__); } // TODO change this when GPS is added
-#else
-  // these are left blank on purpose!
-  #define DEBUG_PRINT(...) 
-  #define DEBUG_PRINT_LN(...)
-  #define DEBUG_PRINT_ERROR(...)
-#endif
 
-#endif /* DEBUG_STUFF_H */
+

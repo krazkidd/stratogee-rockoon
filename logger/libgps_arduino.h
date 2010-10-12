@@ -1,8 +1,28 @@
+/*******************************************************************
+
+logger - Arduino GPS, acceleration, and temperature logging program
+Copyright (C) 2010  Mark Ross and Steven Fan
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+********************************************************************/
+
 /*
  * File: libgps.h
  * Author: Mark Ross
  * Creation Date: 11.09.2010
- * Description: This is a modified version of libgps for use on a uC. This library 
+ * Description: Retrieves GPS data from serial in. This library 
  * only cares about the GGA sentence, because it gives latitude, longitude and 
  * elevation. This library expects that the GPS data does not stop streaming in
  * because it sits and waits for the next GPGGA sentence.
